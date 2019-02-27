@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         
         let bmiModel = BMIModel(h: heightValue!, w: weightValue!)
         
-        resultLable.text = String(bmiModel.CalculateBmi())
+        resultLable.text = String(format: "%.3f", bmiModel.CalculateBmi())
     }
     
     override func viewDidLoad() {
