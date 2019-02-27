@@ -10,11 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var heightTextField: UITextField!
+    
+    @IBOutlet weak var weightTextField: UITextField!
+    
+    @IBOutlet weak var resultLable: UILabel!
+    
+    @IBAction func calculate(_ sender: Any) {
+        
+        let heightValue = Double(heightTextField.text!)
+        
+        let weightValue = Double(weightTextField.text!)
+        
+        let bmiModel = BMIModel(h: heightValue!, w: weightValue!)
+        
+        resultLable.text = String(bmiModel.CalculateBmi())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-
 }
 
